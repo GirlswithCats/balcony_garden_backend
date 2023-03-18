@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.balcony.demo.mapper.backstage.PostsMapper">
+
+    <select id="findPage" resultType="com.balcony.demo.model.entity.backstage.Posts">
+        select bms_post.*, ums_user.username as username  from  bms_post
+        left join ums_user
+        on bms_post.user_id = ums_user.id
+        <where>
+            <if test="username != null and username != ''">
+                and username like concat('%', #{username},'%')
+            </if>
+        </where>
+    </select>
+
+</mapper>

@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: dev
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml  #扫描所有mybatis的xml文件
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+files:
+  upload:
+    path: F:/graduation_project/balcony_garden_project/files/
+#    path: /home/files/
